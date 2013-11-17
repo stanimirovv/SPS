@@ -1,0 +1,260 @@
+﻿
+<!doctype html>
+ 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>PM 0.0001</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+     <script src="jquery.ui-contextmenu.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <style>
+      body {
+        background:gray;
+      }
+	
+  .draggable {min-width:20px; min-height:20px; width: 150px; height: 50px; padding: 0.5em; border:2px solid black;resize: both; overflow: auto;background-size: cover; -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;background-repeat:no-repeat;}
+  .draggable1 {min-width:20px; min-height:20px; width: 150px; height: 50px; padding: 0.5em; border:2px solid gray;resize: both; overflow: auto;background-size: cover; background-repeat:no-repeat;}
+  .dzhe{
+		width: 1300px;
+		height:1200px;
+		padding: 50px;
+		margin: 0 auto;
+		background-color: #fff;
+		-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+div.resize { width: 250px; height: 175; border: 1px solid; resize: both; overflow: auto; }
+  </style>
+</head>
+<body>
+<div id="13">
+     <div id="12" class="context-menu-one box menu-1 dzhe"></div>
+</div>
+<div id="texts"><div class="draggable ui-draggable" id="1363953" style="position: absolute; top: 208px; left: 425px; width: 554px; height: 313px;">
+      <h3> Introduction</h3>
+
+<p>Graphs are mathematical concepts that have found many uses in computer science. Graphs come in many different flavors, many of which have found uses in computer programs. Some flavors are:</p>
+<ul>
+<li>Simple graph</li>
+<li>Undirected or directed graphs</li>
+<li>Cyclic or acyclic graphs</li>
+<li>labeled graphs</li>
+<li>Weighted graphs</li>
+<li>Infinite graphs</li>
+</ul>
+<p>... and many more too numerous to mention.
+Most graphs are defined as a slight alteration of the following rules.</p>
+
+A graph is made up of two sets called Vertices and Edges.
+The Verticies are drawn from some underlying type, and the set may be finite or infinite.
+Each element of the Edge set is a pair consisting of two elements from the Vertices set.
+Graphs are often depicted visually, by drawing the elements of the Vertices set as boxes or circles, and drawing the elements of the edge set as lines or arcs between the boxes or circles. There is an arc between v1 and v2 if (v1,v2) is an element of the Edge set.
+  
+  <p>Extra reading:</p>
+<ul>
+<li> <a href="http://en.wikipedia.org/wiki/Graph_theory">Wikipedia</a></li>
+<li> <a href="http://www.wolframalpha.com/input/?i=Graph&amp;dataset=">Wolfram</a></li>
+</ul>
+</div><div class="draggable ui-draggable" id="821907" style="position: absolute; top: 40px; left: 486px; width: 944px; height: 134px;"><center><h1 style="font-size:50px;">Graphs</h1></center></div><div class="draggable ui-draggable" id="2530139" style="position: absolute; top: 597px; left: 431px; width: 417px; height: 224px;"><h3>Königsberg Bridges</h3>Königsberg was a city in Prussia situated on the Pregel River, which served as the residence of the dukes of Prussia in the 16th century.  (Today, the city is named Kaliningrad, and is a major industrial and commercial center of western Russia.)  The river Pregel flowed through the town, creating an island, as in the following picture.  Seven bridges spanned the various branches of the river, as shown<a href="http://www.jcu.edu/math/vignettes/bridges.htm">More here</a>.</div></div>
+
+
+<div id="pictures"><div class="draggable1 ui-draggable" id="2257694" style="position: absolute; top: 204px; left: 1034px; height: 318px; width: 485px; background-image: url(http://web.cecs.pdx.edu/~sheard/course/Cs163/Graphics/graph1.png); background-size: cover;"></div><div class="draggable1 ui-draggable" id="1984988" style="position: absolute; top: 597px; left: 879px; height: 183px; width: 467px; background-image: url(http://www.jcu.edu/math/vignettes/v5im1.gif); background-size: cover;"></div></div>
+
+</body>
+    <script>
+        //Menu for TextBox
+        $("#texts").contextmenu({
+            delegate: ".draggable",
+            menu: [
+                { title: "Copy", cmd: "copy", uiIcon: "ui-icon-copy" },
+                 { title: "Minify", cmd: "minify" },
+                { title: "----" },
+                {
+                    title: "More", children: [
+                       { title: "Sub 1", cmd: "sub1" },
+                       { title: "Sub 2", cmd: "sub1" }
+                    ]
+                }
+            ],
+            select: function (event, ui) {
+                if (ui.cmd === "copy") {
+                    console.log("KURA MI QNKO");
+                } else if (ui.cmd === "minify") {
+                    document.getElementById(currID).style.height = "3%";
+                    document.getElementById(currID).style.width = "3%";
+                } else if (ui.cmd === "restore") {
+                    
+                }
+
+            }
+        });
+
+        //Menu for Pictures
+        $("#pictures").contextmenu({
+            delegate: ".draggable1",
+            menu: [
+                { title: "Set Background", cmd: "setBG", uiIcon: "ui-icon-copy" },
+                 { title: "Minify", cmd: "minify" },               
+            ],
+            select: function (event, ui) {
+                if (ui.cmd === "setBG") {
+                    document.getElementById(currID).style.background = "url('http://images.nationalgeographic.com/wpf/media-live/photos/000/515/cache/hoh-rain-forest-olympic-national-park_51546_990x742.jpg')";
+                    document.getElementById(currID).style.backgroundSize = "cover";
+                } else if (ui.cmd === "minify") {
+                    document.getElementById(currID).style.height = "3%";
+                    document.getElementById(currID).style.width = "3%";
+                } 
+            }
+        });
+
+        // Menu for slide
+        $("#13").contextmenu({
+            delegate: "#12",
+            menu: [
+                { title: "Create Text box", cmd: "copy", uiIcon: "ui-icon-copy" },
+                 { title: "Create Picture", cmd: "newShit" },
+                 { title: "Previous", cmd: "font" },
+                 { title: "Next", cmd: "font" },
+                { title: "----" },
+                {
+                    title: "Personalize:", children: [                    
+                       { title: "Set Font", cmd: "font" },
+                       { title: "Background", cmd: "background" },
+                       { title: "Next Slide", cmd: "background" },
+                       { title: "Previous Slide", cmd: "background" },
+                    ]
+                }
+            ],
+            select: function (event, ui) {
+                if (ui.cmd === "copy") {
+                    addTest(); // ---------------------
+                } else if (ui.cmd === "newShit") {
+                    addPicture();
+                }
+            }
+                    
+        });
+
+
+        //createText()
+        var mouseX;
+        var mouseY;
+        var currID;
+
+        function addTest() {
+            var tmp = document.createElement("div");
+            tmp.className = "draggable";
+            tmp.style.position = "absolute";
+          //  tmp.style.top = y.toString() + "px";
+            //  tmp.style.left = x.toString() + "px";
+            console.log("INF  "+mouseX);
+            console.log("INF  " + mouseY);
+            
+            tmp.id = Math.floor((Math.random() * 2534576) + 1).toString();
+            document.getElementById("texts").appendChild(tmp);
+            tmp.style.top = mouseY.toString() + "px";
+            tmp.style.left = mouseX.toString() + "px";
+            $("#" + tmp.id).draggable();
+            $("#" + tmp.id).on('mousedown', function (event) {
+                if (event.which == 3) {
+                    currID = $(this).attr('id');
+                    mouseX = event.clientY;
+                    mouseY = event.clientX;
+                }
+
+            });
+        }
+
+        function addPicture() {
+            var tmp = document.createElement("div");
+            tmp.className = "draggable1";
+            tmp.style.position = "absolute";
+            //  tmp.style.top = y.toString() + "px";
+            //  tmp.style.left = x.toString() + "px";
+            console.log("INF  " + mouseX);
+            console.log("INF  " + mouseY);
+
+            tmp.id = Math.floor((Math.random() * 2534576) + 1).toString();
+            document.getElementById("pictures").appendChild(tmp);
+            tmp.style.top = mouseY.toString() + "px";
+            tmp.style.left = mouseX.toString() + "px";
+            $("#" + tmp.id).draggable();
+            $("#" + tmp.id).on('mousedown', function (event) {
+                if (event.which == 3) {
+                    currID = $(this).attr('id');
+                    mouseX = event.clientY;
+                    mouseY = event.clientX;
+                }
+
+            });
+        }
+
+        //Gets mouse Coordinates
+        function tt123() {
+            console.log("should be kk");
+            $("#12").on('mousedown', function (event) {
+                if (event.which == 3) {
+                    mouseY = event.clientY;
+                    mouseX = event.clientX;
+                    console.log(mouseX);
+                    console.log(mouseY);
+                }
+            });
+        }
+
+        tt123();    
+        $(".draggable").draggable();
+        $(".draggable1").draggable();
+       
+            $("#821907").on('mousedown', function (event) {
+                if (event.which == 3) {
+                    currID = $(this).attr('id');
+                    mouseX = event.clientY;
+                    mouseY = event.clientX;
+                } });
+
+                $("#2257694").on('mousedown', function (event) {
+                    if (event.which == 3) {
+                        currID = $(this).attr('id');
+                        mouseX = event.clientY;
+                        mouseY = event.clientX;
+                    } });
+            
+                    $("#1363953").on('mousedown', function (event) {
+                        if (event.which == 3) {
+                            currID = $(this).attr('id');
+                            mouseX = event.clientY;
+                            mouseY = event.clientX;
+                        } });
+
+                        $("#1984988").on('mousedown', function (event) {
+                            if (event.which == 3) {
+                                currID = $(this).attr('id');
+                                mouseX = event.clientY;
+                                mouseY = event.clientX;
+                            }
+                        });
+
+                        $("#2530139").on('mousedown', function (event) {
+                            if (event.which == 3) {
+                                currID = $(this).attr('id');
+                                mouseX = event.clientY;
+                                mouseY = event.clientX;
+                            }
+                        });
+               
+  
+    </script>
+</html>
