@@ -12,8 +12,8 @@
 <h3>About</h3>
 <p>
 This will be a software which will be used to create Interactive HTML5 presentations.
-I started this as practice, but it started to grow in size and my plans for the project started 
-to grow, so <b>after losing a copy of the project</b> which set me back 2 weeks of development
+I started this as practice, but it started to grow in size and so did my plans for the project, 
+so <b>after losing a copy of the project</b> which set me back 2 weeks of development
 I decided that I must make a repository.
 </p>
 
@@ -30,6 +30,7 @@ At this state of development  it's too early to write this.
 
 <h3>What has been done so far</h3>
 <p>
+At this state of development  it's too early to write this.
 </p>
 
 <h3>Example</h3>
