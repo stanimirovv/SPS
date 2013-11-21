@@ -63,11 +63,22 @@
 	}
 	div.resize { 
 		width: 250px; 
-		height: 175; 
+		height: 175px; 
 		border: 1px solid; 
 		resize: both; 
 		overflow: auto; 
 		}
+
+     .textEdBtn {
+        float:left;
+        margin-right:10px;
+        width:59px;
+        height:29px;
+        border: 1px solid black;
+        font-size:11px;
+        display:inline-block;
+        cursor:pointer;
+      }
   </style>
 </head>
 <body>
@@ -89,40 +100,35 @@
          <input id="picURL" type="text" />
     </div>
 </div> 
+     <!--- TEXT EDITOR--->
+    <div id="pictureModal1">
+    <div id="thedialog1" title="Text" ></div>
+    <div id="dialog-confirm1" title="Text Editor">
+
+        <!--- row with buttons for style-->
+        <div id="textEditMenu" style="width:440px;height:30px;  display:block;text-align:center;">
+            <div onclick="textbox2('<b></b>')" class="textEdBtn"><b>B</b></div>
+            <div onclick="textbox2('<i></i>')" class="textEdBtn"><i>I</i></div>
+            <div onclick="textbox2('<ul></ul>')" class="textEdBtn">Unordered list</div>
+            <div onclick="textbox2('<ol></ol>')" class="textEdBtn">Ordered list</div>
+            <div onclick="textbox2('<li></li>')" class="textEdBtn">List element</div>
+            <div onclick="textbox2('<br/>')" class="textEdBtn">New line</div>
+        </div>
+            <!-- text area --->
+         <textarea id="textGen"  style="width:440px;height:200px;resize: vertical;overflow:auto"></textarea>
+            <!--- preview --->
+        <p>Preview:</p>
+        <p id="textGenPreview" style="resize: vertical;overflow:auto;height:300px;"></p>
+    </div> 
+</div> 
 </body>
     <script>
 	
-	  // Menu for slide
-        $("#13").contextmenu({
-            delegate: "#12",
-            menu: [
-                { title: "Create Text box", cmd: "copy", uiIcon: "ui-icon-copy" },
-                 { title: "Create Picture", cmd: "newShit" },
-                 { title: "Previous", cmd: "font" },
-                 { title: "Next", cmd: "font" },
-                { title: "----" },
-                {
-                    title: "Personalize:", children: [                    
-                       { title: "Set Font", cmd: "font" },
-                       { title: "Background", cmd: "background" },                      
-                    ]
-                }
-            ],
-            select: function (event, ui) {
-                if (ui.cmd === "copy") {
-                    addTest(); // ---------------------
-                } else if (ui.cmd === "newShit") {
-                    addPicture();
-                }
-            }
-                    
-        });
-
         //Menu for TextBox
         $("#texts").contextmenu({
             delegate: ".draggable",
             menu: [
-                { title: "Copy", cmd: "copy", uiIcon: "ui-icon-copy" },
+                { title: "Insert", cmd: "insert", uiIcon: "ui-icon-copy" },
                  { title: "Minify", cmd: "minify" },
                  { title: "Remove", cmd: "remove" },
                 { title: "----" },
@@ -134,13 +140,14 @@
                 }
             ],
             select: function (event, ui) {
-                if (ui.cmd === "copy") {
-                    console.log("KURA MI QNKO");
+                if (ui.cmd === "insert") {
+                    $(textGenId).val(document.getElementById(currID).innerHTML);
+                    $('#dialog-confirm1').dialog('open');
                 } else if (ui.cmd === "minify") {
                     document.getElementById(currID).style.height = "3%";
                     document.getElementById(currID).style.width = "3%";
                 } else if (ui.cmd === "restore") {
-                    
+
                 } else if (ui.cmd === "remove") {
                     document.getElementById("texts").removeChild(document.getElementById(currID));
                 }
@@ -159,7 +166,7 @@
             select: function (event, ui) {
                 if (ui.cmd === "setBG") {
                     $('#dialog-confirm').dialog('open');
-                    document.getElementById(currID).style.backgroundSize = "cover";
+                    //document.getElementById(currID).style.backgroundSize = "cover";
                 } else if (ui.cmd === "minify") {
                     document.getElementById(currID).style.height = "3%";
                     document.getElementById(currID).style.width = "3%";
@@ -169,7 +176,32 @@
             }
         });
 
-      
+        // Menu for slide
+        $("#13").contextmenu({
+            delegate: "#12",
+            menu: [
+                { title: "Create Text box", cmd: "copy", uiIcon: "ui-icon-copy" },
+                 { title: "Create Picture", cmd: "newShit" },
+                 { title: "Previous", cmd: "font" },
+                 { title: "Next", cmd: "font" },
+                { title: "----" },
+                {
+                    title: "Personalize:", children: [
+                       { title: "Set Font", cmd: "font" },
+                       { title: "Background", cmd: "background" },
+                    ]
+                }
+            ],
+            select: function (event, ui) {
+                if (ui.cmd === "copy") {
+                    addTest(); // ---------------------
+                } else if (ui.cmd === "newShit") {
+                    addPicture();
+                }
+            }
+
+        });
+
         /* Some variables which are used in a lot of the functions
                 - mouseX is the X of the mouse
                 - mouseY is the Y of the mouse
