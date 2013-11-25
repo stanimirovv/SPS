@@ -131,13 +131,6 @@
                 { title: "Insert", cmd: "insert", uiIcon: "ui-icon-copy" },
                  { title: "Minify", cmd: "minify" },
                  { title: "Remove", cmd: "remove" },
-                { title: "----" },
-                {
-                    title: "More", children: [
-                       { title: "Sub 1", cmd: "sub1" },
-                       { title: "Sub 2", cmd: "sub1" }
-                    ]
-                }
             ],
             select: function (event, ui) {
                 if (ui.cmd === "insert") {
@@ -160,8 +153,8 @@
             delegate: ".draggable1",
             menu: [
                 { title: "Set Background", cmd: "setBG", uiIcon: "ui-icon-copy" },
-                 { title: "Minify", cmd: "minify" },
-                 { title: "Remove", cmd: "remove" },
+                { title: "Minify", cmd: "minify" },
+                { title: "Remove", cmd: "remove" },
             ],
             select: function (event, ui) {
                 if (ui.cmd === "setBG") {
@@ -181,21 +174,13 @@
             delegate: "#12",
             menu: [
                 { title: "Create Text box", cmd: "copy", uiIcon: "ui-icon-copy" },
-                 { title: "Create Picture", cmd: "newShit" },
-                 { title: "Previous", cmd: "font" },
-                 { title: "Next", cmd: "font" },
-                { title: "----" },
-                {
-                    title: "Personalize:", children: [
-                       { title: "Set Font", cmd: "font" },
-                       { title: "Background", cmd: "background" },
-                    ]
-                }
+                 { title: "Create Picture", cmd: "addPicture" },                
+                {  title: "Personalize:", cmd: "personalize"}
             ],
             select: function (event, ui) {
                 if (ui.cmd === "copy") {
                     addTest(); // ---------------------
-                } else if (ui.cmd === "newShit") {
+                } else if (ui.cmd === "addPicture") {
                     addPicture();
                 }
             }

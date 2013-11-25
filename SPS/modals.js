@@ -42,10 +42,15 @@
              }
          });     
      });
-
-        var textGenId = "#textGen";
-        var textGenPrevId = "#textGenPreview";
-        window.setInterval(function () { updatePreview(); }, 350);
+		
+		/*
+			- textGenId Id of the input box
+			- textGenPrevId id of the preview div
+			- (last row) updates the preview 150 miliseconds is good enough
+		*/
+        var textGenId = "#textGen";  
+        var textGenPrevId = "#textGenPreview"; 
+        window.setInterval(function () { updatePreview(); }, 150); 
 
 		//Updates the preview of the text
         function updatePreview() {
