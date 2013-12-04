@@ -12,7 +12,9 @@
                         console.log(document.getElementById("picURL").value);
                         var tmpBackground = document.getElementById("picURL").value;
                         document.getElementById("picURL").value = "";
-                        document.getElementById(currID).style.background = "url("+ tmpBackground +")";
+                        document.getElementById(currID).style.background = "url(" + tmpBackground + ")";
+                        document.getElementById(currID).style.backgroundRepeat = "no-repeat";
+                        document.getElementById(currID).style.backgroundSize = "contain";
                         $(this).dialog("close");
                     },
                     Cancel: function () {

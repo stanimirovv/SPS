@@ -25,12 +25,10 @@
 
 		
 /* Creates the Picture box.  */		
-        function addPicture() {
+       function addPicture() {
             var tmp = document.createElement("div");
             tmp.className = "draggable1";
-            tmp.style.position = "absolute";
-            //  tmp.style.top = y.toString() + "px";
-            //  tmp.style.left = x.toString() + "px";
+            tmp.style.position = "absolute"
             console.log("INF  " + mouseX);
             console.log("INF  " + mouseY);
 
@@ -38,6 +36,9 @@
             document.getElementById("pictures").appendChild(tmp);
             tmp.style.top = mouseY.toString() + "px";
             tmp.style.left = mouseX.toString() + "px";
+            tmp.style.backgroundRepeat = "no-repeat";
+            tmp.style.backgroundSize = "contain";
+            
             $("#" + tmp.id).draggable();
             $("#" + tmp.id).on('mousedown', function (event) {
                 if (event.which == 3) {
@@ -48,3 +49,4 @@
 
             });
         }
+		
