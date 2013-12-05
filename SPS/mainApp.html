@@ -129,7 +129,7 @@
              <option>Verdana</option>
              <option>Andale Mono</option>
              <option>Arial Italic</option> 
-              <option>Comic Sans MS</option>
+             <option>Comic Sans MS</option>
              <option>Courier New Bold</option>
              <option>Georgia</option>
              <option>Georgia Bold Italic</option>
@@ -147,7 +147,11 @@
             <option>15px</option>   
             <option>20px</option>   
             <option>25px</option>   
-            <option>30px</option>         
+            <option>30px</option>
+            <option>35px</option> 
+            <option>40px</option> 
+            <option>45px</option> 
+            <option>50px</option>        
         </select><br />
         <p id="testiSize">Example text to see the new base size. 1234567890</p>
     </div>
@@ -160,17 +164,20 @@
             delegate: ".draggable",
             menu: [
                 { title: "Insert", cmd: "insert", uiIcon: "ui-icon-copy" },
-                 { title: "Minify", cmd: "minify" },
-                 { title: "Remove", cmd: "remove" },
+                { title: "Minify", cmd: "minify" },
+                { title: "Bigify", cmd: "bigify" },
+                { title: "Remove", cmd: "remove" },
             ],
             select: function (event, ui) {
                 if (ui.cmd === "insert") {
                     $(textGenId).val(document.getElementById(currID).innerHTML);
                     $('#dialog-confirm1').dialog('open');
                 } else if (ui.cmd === "minify") {
+                    updateMinData();
                     document.getElementById(currID).style.height = "3%";
                     document.getElementById(currID).style.width = "3%";
-                } else if (ui.cmd === "restore") {
+                } else if (ui.cmd === "bigify") {
+                    restoreMinData();
 
                 } else if (ui.cmd === "remove") {
                     document.getElementById("texts").removeChild(document.getElementById(currID));
@@ -185,6 +192,7 @@
             menu: [
                 { title: "Set Background", cmd: "setBG", uiIcon: "ui-icon-copy" },
                 { title: "Minify", cmd: "minify" },
+                { title: "Bigify", cmd: "bigify" },
                 { title: "Remove", cmd: "remove" },
             ],
             select: function (event, ui) {
@@ -192,8 +200,11 @@
                     $('#dialog-confirm').dialog('open');
                     //document.getElementById(currID).style.backgroundSize = "cover";
                 } else if (ui.cmd === "minify") {
+                    updateMinData();
                     document.getElementById(currID).style.height = "3%";
                     document.getElementById(currID).style.width = "3%";
+                } else if (ui.cmd == "bigify") {
+                    restoreMinData();
                 } else if (ui.cmd == "remove") {
                     document.getElementById("pictures").removeChild(document.getElementById(currID));
                 }
@@ -242,5 +253,20 @@
         }
         tt123();
 
+        // Saving the data for minify
+        var minData = {}; // map for storage
+
+        /* updates the map with values */
+        function updateMinData() {
+            console.log("Entered the data func");
+            minData[currID] = { "width": document.getElementById(currID).style.width, "height": document.getElementById(currID).style.height };
+            console.log("Saved object with ID " + currID + " with width:" + minData[currID].width + " and height: " + minData[currID].height);
+        }
+
+        /* loads the values from the map and updates the var */
+        function restoreMinData() {
+            document.getElementById(currID).style.width = minData[currID].width;
+            document.getElementById(currID).style.height = minData[currID].height;
+        }
     </script>
 </html>
