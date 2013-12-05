@@ -77,3 +77,37 @@
             document.getElementById(currID).innerHTML = tmpStr;
             $(textGenId).val("");
         }
+		
+/* Modal for the body edit */
+        var font1;
+
+        $(function () {
+            $("#dialog-confirm657").dialog({
+                autoOpen: false,
+                resizable: true,
+                height: 680,
+                width: 500,
+                modal: true,
+                buttons: {
+                    "Confirm": function () {
+                        $(this).dialog("close");
+                        document.body.style.fontFamily = font1;
+                    },
+                    Cancel: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+
+        });
+
+
+
+        function changeStyle() {
+
+        }
+
+        function changeFont(newFont) {
+            document.getElementById("testFont").style.fontFamily = newFont;
+            font1 = newFont;
+        }

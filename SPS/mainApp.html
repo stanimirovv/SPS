@@ -121,6 +121,33 @@
         <p id="textGenPreview" style="resize: vertical;overflow:auto;height:300px;"></p>
     </div> 
 </div> 
+    <!--- EDIT BODY --->
+    <div id="pictureModal2">
+    <div id="dialog-confirm657" title="Text Editor">
+        <p>Choose the font:</p>
+         <select id="selectFont" onchange="changeFont(this.value)" style="float:left; width:250px"> 
+             <option>Verdana</option>
+             <option>Andale Mono</option>
+             <option>Arial Italic</option> 
+              <option>Comic Sans MS</option>
+             <option>Courier New Bold</option>
+             <option>Georgia</option>
+             <option>Georgia Bold Italic</option>
+             <option>Lucida Sans Unicode</option>
+             <option>Times New Roman Italic</option>
+             <option>Trebuchet MS</option>
+             <option>Arial</option>
+             <option>Impact</option>
+             <option>Times New Roman</option>
+             <option>Minion Web</option>
+             <option>Courier New</option>
+        </select> <br />
+        <p id="testFont">Example text to see the new font. 1234567890</p>
+        <select id="selectSize" onchange="getRecepies(this.value)" style="float:left; width:250px">          
+        </select><br />
+        <p>Example text to see the new base size. 1234567890</p>
+    </div>
+</div> 
 </body>
     <script>
 	
@@ -182,6 +209,8 @@
                     addTest(); // ---------------------
                 } else if (ui.cmd === "addPicture") {
                     addPicture();
+                } else if (ui.cmd === "personalize") {
+                    $('#dialog-confirm657').dialog('open');
                 }
             }
 
@@ -207,6 +236,7 @@
                 }
             });
         }
-		tt123();
+        tt123();
+
     </script>
 </html>
