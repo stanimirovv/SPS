@@ -79,7 +79,8 @@
         }
 		
 /* Modal for the body edit */
-        var font1;
+        var font1; // font name
+        var fsize1; //font size
 
         $(function () {
             $("#dialog-confirm657").dialog({
@@ -92,6 +93,7 @@
                     "Confirm": function () {
                         $(this).dialog("close");
                         document.body.style.fontFamily = font1;
+                        document.getElementById("texts").style.fontSize = fsize1;
                     },
                     Cancel: function () {
                         $(this).dialog("close");
@@ -110,4 +112,9 @@
         function changeFont(newFont) {
             document.getElementById("testFont").style.fontFamily = newFont;
             font1 = newFont;
+        }
+
+        function changeSize(newSize) {
+            document.getElementById("testiSize").style.fontSize = newSize;
+            fsize1 = newSize;
         }
