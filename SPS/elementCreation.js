@@ -6,8 +6,8 @@
             var tmp = document.createElement("div");
             tmp.className = "draggable";
             tmp.style.position = "absolute";          
-            console.log("INF  "+mouseX);
-            console.log("INF  " + mouseY);           
+            console.log("TextBox X  "+mouseX);
+            console.log("TextBox Y  " + mouseY);
             tmp.id = Math.floor((Math.random() * 2534576) + 1).toString();
             document.getElementById("texts").appendChild(tmp);
             tmp.style.top = mouseY.toString() + "px";
@@ -29,8 +29,8 @@
             var tmp = document.createElement("div");
             tmp.className = "draggable1";
             tmp.style.position = "absolute"
-            console.log("INF  " + mouseX);
-            console.log("INF  " + mouseY);
+            console.log("Picture X  " + mouseX);
+            console.log("Picture Y" + mouseY);
 
             tmp.id = Math.floor((Math.random() * 2534576) + 1).toString();
             document.getElementById("pictures").appendChild(tmp);
