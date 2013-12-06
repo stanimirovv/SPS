@@ -63,11 +63,23 @@
 		// Depending on the parameter Creates a new tag
 		// at cursor position
         function textbox2(tag) {
-            var cursorPos = $(textGenId).prop('selectionStart');
+         /*   var cursorPos = $(textGenId).prop('selectionStart');
             var v = $(textGenId).val();
             var textBefore = v.substring(0, cursorPos);
             var textAfter = v.substring(cursorPos, v.length);
-            $(textGenId).val(textBefore + tag + textAfter);
+            $(textGenId).val(textBefore + tag + textAfter);*/
+            var selStart = $("#textGen")[0].selectionStart;
+            var selEnd = $("#textGen")[0].selectionEnd;
+
+            var originalString = $("#textGen").val();
+
+            var segment_1 = originalString.substr(0, selStart);
+            var segment_2 = originalString.substr(selStart, selEnd);
+            var segment_3 = originalString.substr(selEnd, originalString.length);
+
+            var finalString = segment_1 + tag + segment_2 + tag + segment_3; // < ===== Error
+
+            $("#textGen").val(finalString);
         }
 		
 		// Sets the formated text to the selected div
