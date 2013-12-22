@@ -268,5 +268,10 @@
             document.getElementById(currID).style.width = minData[currID].width;
             document.getElementById(currID).style.height = minData[currID].height;
         }
+
+        /* Prevents the user from leaving the page by accident. */
+        window.onbeforeunload = function () {
+            return "Careful! You might lose precious work.";
+        }
     </script>
 </html>
