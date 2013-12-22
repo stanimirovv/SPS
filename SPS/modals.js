@@ -63,11 +63,7 @@
 		// Depending on the parameter Creates a new tag
 		// at cursor position
         function textbox2(tag) {
-         /*   var cursorPos = $(textGenId).prop('selectionStart');
-            var v = $(textGenId).val();
-            var textBefore = v.substring(0, cursorPos);
-            var textAfter = v.substring(cursorPos, v.length);
-            $(textGenId).val(textBefore + tag + textAfter);*/
+            //creates the string at the cursor position
             var selStart = $("#textGen")[0].selectionStart;
             var selEnd = $("#textGen")[0].selectionEnd;
 
@@ -77,8 +73,23 @@
             var segment_2 = originalString.substr(selStart, selEnd);
             var segment_3 = originalString.substr(selEnd, originalString.length);
 
-            var finalString = segment_1 + tag + segment_2 + tag + segment_3; // < ===== Error
 
+            //adds the tag
+            if (tag == "<b>") {
+                var finalString = segment_1 + "<b>" + segment_2 + "</b>" + segment_3; // < ===== Error
+            } else if (tag == "<i>") {
+                var finalString = segment_1 + "<i>" + segment_2 + "</i>" + segment_3;
+            } else if (tag == "<ul>") {
+                var finalString = segment_1 + "<ul>" + segment_2 + "</ul>" + segment_3;
+            } else if (tag == "<ol>") {
+                var finalString = segment_1 + "<ol>" + segment_2 + "</ol>" + segment_3;
+            } else if (tag == "<li>") {
+                var finalString = segment_1 + "<li>" + segment_2 + "</li>" + segment_3;
+            } else if (tag == "<br/>") {
+                var finalString = segment_1  + segment_2 + "<br/>" + segment_3;
+            }
+
+            //append string
             $("#textGen").val(finalString);
         }
 		
