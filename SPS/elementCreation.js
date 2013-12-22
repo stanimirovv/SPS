@@ -10,7 +10,7 @@
             console.log("TextBox Y  " + mouseY);
             tmp.id = Math.floor((Math.random() * 2534576) + 1).toString();
             document.getElementById("texts").appendChild(tmp);
-            tmp.style.top = mouseY.toString() + "px";
+            tmp.style.top =(window.pageYOffset  + mouseY).toString() + "px";
             tmp.style.left = mouseX.toString() + "px";
             $("#" + tmp.id).draggable();
             $("#" + tmp.id).on('mousedown', function (event) {
@@ -34,7 +34,7 @@
 
             tmp.id = Math.floor((Math.random() * 2534576) + 1).toString();
             document.getElementById("pictures").appendChild(tmp);
-            tmp.style.top = mouseY.toString() + "px";
+            tmp.style.top = (window.pageYOffset + mouseY).toString() + "px";
             tmp.style.left = mouseX.toString() + "px";
             tmp.style.backgroundRepeat = "no-repeat";
             tmp.style.backgroundSize = "contain";
