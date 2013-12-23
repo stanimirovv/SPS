@@ -5,36 +5,35 @@
 <li>About</li>
 <li>Goal</li>
 <li>Features</li>
-<li>What has been done so far</li>
+<li>How to use</li>
 <li>Example</li>
 </ul>
 
 <h3>About</h3>
 <p>
-This will be a software which will be used to create Interactive HTML5 presentations.
-I started this as practice, but it started to grow in size and so did my plans for the project, 
-so <b>after losing a copy of the project</b> which set me back 2 weeks of development
-I decided that I must make a repository.
+A small piece of software made for fun.
 </p>
 
 <h3>Goal</h3>
 <p>
-The goal is simple- to create an easy to use, simple and free, open source application which will create (and maybe host)
-presentations and will  be opened for add ons.
+To simply create a working prototype of a software that will generate (and maybe host) html based presentations.
 </p>
 
 <h3>Features</h3>
 <p>
-At this state of development  it's too early to write this.
+ This section will be filled at a later stage of development.
 </p>
 
-<h3>What has been done so far</h3>
+<h3>How to use</h3>
 <p>
-At this state of development  it's too early to write this.
+First of all you should start by ajusting the size of the window with your browser zoom. Once this is done you can press the right button on start adding
+elements or to set the default font and size for the presentation. Once you have created an element, again by right clicking on them you open a new window
+where you can edit the element. For example if you click on <b>insert</b> on a text field a menu with a simple text editor will open which you can use to
+generate the needed text. The <b>minify </b> option will make the element small, where as the <b>bigify</b> option will restore the element's original size.
+<b>Remove</b> removes the element.
 </p>
 
 <h3>Example</h3>
 <p>
-In the folder titled "Example" I've made a simple presentation wich features
-some of the interactivity, such as the ability to resize and drag the elments.
+The current example is pretty outdated, but still works.
 </p>
